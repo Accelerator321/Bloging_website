@@ -33,7 +33,7 @@ const { sign } = require('crypto');
 
 
 app.use(sessions({
-    secret: "iAMAccelerator4reason",
+    secret: "YOR_SECRET_KEY",
     resave: false,
     saveUninitialized: false,
     
