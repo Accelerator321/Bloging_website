@@ -1,0 +1,15 @@
+extends index.pug
+block content 
+    link(rel='stylesheet' href='../static/style2.css')
+    .d-flex.justify-content-center.my-5#signupform
+        form.row.g-3.container#contactform(style='max-width: 500px; height:400px;' action='/user/signin' method="POST")
+            .col-md-12
+                label.form-label(for='inputEmail4') Email
+                input#inputEmail4.form-control(type='email' style='color:black;' name='email')
+            .col-md-12
+                label.form-label(for='inputPassword4') Password
+                input#inputPassword4.form-control(type='password' style='color:black;' name='password')
+            .d-flex.flex-wrap(style="justify-content:space-between;")
+                button.btn.btn-outline-primary#signupbtn(type='submit' style='max-width:100px; max-height:40px;') Sign in
+                a(href='/user/signin?forgot=true') Forgot Password
+

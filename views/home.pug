@@ -1,0 +1,20 @@
+extends index.pug
+
+block style
+  link(href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap', rel='stylesheet')
+ 
+
+block content
+  #home
+    .cont
+      span.welcome(href="/user/signup") 
+        h1.neon.txt-ne(data-text='Nadeesha Eranjan') Get Registerd
+        h1.neon.txt-ne.d(ata-text='Nadeesha Eranjan') To post your own blogs
+    h2.glass.my-5.text-center(style="color: #df2346;max-width: 257px;margin: auto;border-radius: 54%;margin-bottom: 30px;padding: 14px;") Recent Blogs
+    #cardbox.d-flex.flex-row.flex-wrap
+    .d-flex.justify-content-center
+      button.btn-outnline-primary#prev Prev
+      button.btn-outnline-primary#next Next
+      
+block script
+  script(src='../static/Home.js')

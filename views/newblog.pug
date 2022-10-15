@@ -1,0 +1,39 @@
+extends index.pug
+
+block style 
+   link(rel='stylesheet' href='../static/blog.css')
+
+   link(rel='stylesheet' href='../static/creatblog.css')
+block content
+    
+    .d-flex.justify-content-center.my-2(style="width:100%;")
+        form.row.g-3#blogcontent(style='width: 70%;' method="POST" enctype='multipart/form-data' action='/user/newblog')
+            #newblogdiv
+                .col-md-12
+                    label.form-label Enter Title
+                    input.form-control(type='text' name='title' required='')
+                .col-md-12
+                    label.form-label Add Image
+                    input.form-control(type='file' onchange="fileValidation(event)" required='' name='image')
+                    #size
+                
+                .col-md-12
+                    label.form-label Enter Text
+                    textarea.form-control(rows="10" required='' name='text')
+                    
+                .col-md-12
+                    
+                    input#pattern.form-control(type='text' required='' style='display:none;' name='pattern')    
+                   
+            a.btn.btn-primary.mx-2.my-1#headbtn(style='width:120px') Add Heading
+            a.btn.btn-primary.mx-2.my-1#parabtn(style='width:120px')  Add Text
+            a.btn.btn-primary.mx-2.my-1#imgbtn(style='width:120px')  Add Image
+            button.btn.btn-primary.mx-2.my-1#creatbtn(style='width:120px')  Creat
+
+    
+                
+
+    
+block script 
+
+    script(src='../static/newblog.js')

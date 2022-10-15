@@ -1,0 +1,24 @@
+extends index.pug 
+
+block content 
+     #box
+
+        .row.glass.g-3.my-4.container(style="max-width:450px;margin:auto; border-radius:30px")   
+            .col-md-12.fomItem
+                
+                label.form-label(for='inputEmail4' style="color:white") Email
+                input#inputEmail4.form-control(type='email', style='color:black;', name='email', required='')
+                label.form-label(for='newpass' style="color:white") Enter New Password
+                input#newpass.form-control(type='text' style='color:black;' name='pass' required='')
+                label.form-label#otplabel(for='otp' style="color:white;display:none; ") Enter otp
+                input#otp.form-control(type='text' style='color:black;display:none; ' name='otp' required='')
+                a.btn.btn-outline-primary#otpbtn.my-2(type='submit' style='max-width: 100px;') submit
+                a.btn.btn-outline-success.mx-2#send.my-2(type='submit' style='max-width: 100px;') send Otp
+                a.btn.btn-outline-success.mx-2#resend.my-2(type='submit' style='max-width: 100px; display:none') resend otp
+                #msg.my-3
+            
+      
+        
+
+block script 
+    script(src="../static/forgot.js") 

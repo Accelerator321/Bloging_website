@@ -1,0 +1,23 @@
+extends index.pug 
+
+block content 
+    #box
+        
+    form.row.glass.g-3.my-4.container#contactform(style='max-width: 500px;margin:auto;color:white;border-radius:30px;' action='/user/usersave' method="GET" enctype='multipart/form-data')
+        .col-md-12.fomItem#mse
+            #msg(style="color:green") #{msg}
+            div#mydiv.my-1
+                a.btn.btn-outline-primary(style="cursor:pointer;")#edit Edit-Email
+            
+        .col-md-12.fomItem
+            label.form-label(for='inputEmail4') Enter otp
+            input#otp.form-control(type='text' style='color:black;' name='email' required='')
+            a.btn.btn-outline-primary#otpbtn.my-2(type='submit' style='max-width: 100px;') submit
+            a.btn.btn-outline-success.mx-2#resend.my-2(type='submit' style='max-width: 100px;') resend
+            
+            
+        button.btn.btn-outline-primary#signupbtn(type='submit' style='max-width: 100px;display:none;') Sign up
+        #msg
+
+block script 
+    script(src="../static/otp.js") 

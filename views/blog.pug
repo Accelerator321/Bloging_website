@@ -1,0 +1,29 @@
+extends index.pug
+
+block style 
+   link(rel='stylesheet' href='../static/blog.css')
+
+block content
+    link(rel='preconnect', href='https://fonts.googleapis.com')
+    link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap', rel='stylesheet')
+
+
+    #blogbox.d-flex.flex-row(syle="background-color: #ececdd;")    
+      .card.d-flex.justify-content-center.flex-column#myblog.my-4(style='background-color: #f0f0e1;border:0px;')
+        h1(style="font-family: 'Oswald', sans-serif;text-align:center; background-color:#212529; color:white;padding:24px;" ) #{blog.title}
+  
+          #get(style='display:none') #{blog.getid}
+      .card#userCard.my-3.d-flex(style="overflow:auto")
+          img(src=`${blog.avatar}`, alt='...' , style='min-width:70px; max-width:250px;')
+          ul.my-3 
+           li(style="list-style:none;")
+           h3 Blog Details-
+           li 
+            a(href=`/user?username=${blog.username}` style="text-decoration:none;") Username: #{blog.username}
+           li.text-wrap posted at- #{new Date(Number(blog.getid.split(blog.username)[1]))}
+           li(style="list-style:none")
+            a.my-2(href=`/user?username=${blog.username}` style="color:#7373db;") View Profile
+
+block script
+  script(src='../static/blog.js')

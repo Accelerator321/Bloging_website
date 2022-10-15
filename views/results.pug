@@ -1,0 +1,11 @@
+extends index.pug
+
+block content
+  #home
+    h1.card.mt-4.text-center(style="color: #0432e6;margin-bottom:30px;padding:10px") Showing Results for- #{query}
+    #query(style="display:none") #{query}
+    #cardbox.d-flex.flex-row.flex-wrap
+   
+      
+block script
+  script(src='../static/results.js')

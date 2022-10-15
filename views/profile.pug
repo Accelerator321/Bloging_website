@@ -1,0 +1,25 @@
+extend index.pug
+//- static/img/1656071606915-geass.png
+block style
+  link(rel='stylesheet' href='../static/profile.css')
+block content 
+      
+
+      .card.my-2#profileblock(style='max-width: 50rem;margin:auto;')
+        #box.d-inline-flex.flex-wrap
+          img#profilepic(src=`${user.avatar}`, alt='...' , style='min-width:70px; max-width:250px;')
+          #smallbox.mx-2.d-flex.flex-column
+              ul.list-group.list-group-flush
+                li.list-group-item#viewedUser Username: #{user.username}
+                li.list-group-item Email : #{user.email}
+
+      h1(style="text-align:center;") Blogs by #{user.username}
+
+      //- #blogsdiv
+
+      #blogsdiv.d-flex.flex-row.flex-wrap
+       
+
+
+    
+      script(src='../static/profile.js')

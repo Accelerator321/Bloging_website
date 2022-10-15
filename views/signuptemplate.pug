@@ -1,0 +1,31 @@
+extend index.pug
+//- static/img/1656071606915-geass.png
+block content 
+      
+      
+
+      #box
+      .card.my-2#profileblock(style='max-width: 50rem;margin:auto;')
+        
+        .d-inline-flex.flex-wrap
+          img#profilepic(src=`${user.avatar}`, alt='...' , style='min-width:70px; max-width:250px;')
+          #smallbox.mx-2.d-flex.flex-column
+              ul.list-group.list-group-flush
+                li.list-group-item#username Username: #{user.username}
+                li.list-group-item Email : #{user.email}
+                
+
+      a.btn.btn-outline-primary.m-5.glass(href='/user/newblog') Creat A Blog
+
+      //- #blogsdiv
+
+      table.table#blogsdiv.container.card(style="width:90%;overflow: scroll;")
+        hr
+        tbody
+
+
+      script(src='../static/project2.js')
+         
+      script.
+        document.getElementsByClassName('active')[0].classList.toggle("active");
+        document.getElementById("profile").classList.toggle("active");
