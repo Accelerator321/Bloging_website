@@ -12,7 +12,7 @@ const sessions = require("express-session");
 
 
 router.use(sessions({
-    secret: "iAMAccelerator4reason",
+    secret: "YOUR_SECRET_KEY",
     resave:false,
     saveUninitialized:false
 }
@@ -22,7 +22,7 @@ router.use(sessions({
 
 router.use('/static', express.static('static'));
 
-router.use(cookieParser("Rasengan1278uploaded"));
+router.use(cookieParser("YOUR_SECRET_KEY"));
 router.use(express.json());
 router.use(express.urlencoded({
     extended: false
