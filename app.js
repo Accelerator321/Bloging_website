@@ -22,7 +22,7 @@ app.use('/user', user);
 
 
 // EXPRESS
-app.use(cookieParser("Rasengan1278uploaded"));
+app.use(cookieParser("YOUR_SECRET_KEY_FOR_SIGNING_COOKIES"));
 app.use('/static', express.static('static')); // serving static files
 app.use(express.json());
 app.use(express.urlencoded({
