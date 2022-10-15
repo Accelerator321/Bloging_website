@@ -1,2 +1,3 @@
-# Bloging_website
-its a blogingwebsite here u can create your id and post your own blogs
+First put your credentials isnide /models/functions.js for emailing the otp
+Change the secret key used for signing the cookies in the app.js file
+
