@@ -58,7 +58,7 @@ function cookieChecker(req, res, next) {
     }
 }
 
-mongoose.connect('mongodb://localhost/harry');
+mongoose.connect(process.env.Connection_string);
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, "connection error:"));
