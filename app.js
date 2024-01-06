@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const { json } = require('express');
 const app = express();
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 const port = 3000;
 
@@ -22,7 +23,7 @@ app.use('/user', user);
 
 
 // EXPRESS
-app.use(cookieParser("YOUR_SECRET_KEY_FOR_SIGNING_COOKIES"));
+app.use(cookieParser(process.env.Cookie_secret));
 app.use('/static', express.static('static')); // serving static files
 app.use(express.json());
 app.use(express.urlencoded({
@@ -33,7 +34,7 @@ const { sign } = require('crypto');
 
 
 app.use(sessions({
-    secret: "YOR_SECRET_KEY",
+    secret: process.env.Session_secret ,
     resave: false,
     saveUninitialized: false,
     

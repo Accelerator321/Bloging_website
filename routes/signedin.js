@@ -9,10 +9,11 @@ const signUp = require('../models/sigUpSchema');
 const blog = require('../models/blogSchema');
 const { sendMail, generateOTP } = require('../models/functions');
 const sessions = require("express-session");
+require('dotenv').config();
 
 
 router.use(sessions({
-    secret: "YOUR_SECRET_KEY",
+    secret: process.env.Session_secret ,
     resave:false,
     saveUninitialized:false
 }
@@ -22,7 +23,7 @@ router.use(sessions({
 
 router.use('/static', express.static('static'));
 
-router.use(cookieParser("YOUR_SECRET_KEY"));
+router.use(cookieParser(process.env.Cookie_secret));
 router.use(express.json());
 router.use(express.urlencoded({
     extended: false
@@ -303,6 +304,21 @@ router
     })
 
 
+    signUp.find({}).then(items => {
+        for (let item of items) {
+            router
+                .route(`/${item.username}`)
+                .get(cookieChecker, (req, res) => {
+                    if (req.session.userData) {
+                        if (req.session.userData.username === item.username) {
+                            res.status(200).render('signuptemplate.pug', { user: item })
+                        } else { res.redirect('/') }
+                    }
+                    else { res.redirect('/') }
+                })
+        }
+    }
+    )
 
 // ___________________Creat Blog End Point_______________
 
@@ -392,21 +408,7 @@ router
 
 
 
-signUp.find({}).then(items => {
-    for (let item of items) {
-        router
-            .route(`/${item.username}`)
-            .get(cookieChecker, (req, res) => {
-                if (req.session.userData) {
-                    if (req.session.userData.username === item.username) {
-                        res.status(200).render('signuptemplate.pug', { user: item })
-                    } else { res.redirect('/') }
-                }
-                else { res.redirect('/') }
-            })
-    }
-}
-)
+
 
 
 router
