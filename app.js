@@ -25,7 +25,7 @@ app.use('/user', user);
 // EXPRESS
 app.use(cookieParser(process.env.Cookie_secret));
 // app.use(exp.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname,'static'))); // serving static files
+app.use('/static',express.static(path.join(__dirname,'static'))); // serving static files
 app.use(express.json());
 app.use(express.urlencoded({
     extended: false
