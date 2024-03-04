@@ -1,6 +1,0 @@
-This favicon was generated using the following font:
-
-- Font Title: Neuton
-- Font Author: Copyright 2010 The Neuton Project Authors (http://www.21326.info/), with Reserved Font Name "Neuton".
-- Font Source: http://fonts.gstatic.com/s/neuton/v18/UMBTrPtMoH62xUZyyII7civlBw.ttf
-- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
