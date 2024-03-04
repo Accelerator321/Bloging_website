@@ -1,0 +1,43 @@
+body{
+    background-color: #d2dfdfdb;
+}
+
+#signupform::before{
+    content:"";
+    background: url('/static/bg-home.jpg') no-repeat center center/cover;
+    position: fixed;
+    top:0px;
+    left:0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+
+}
+
+#contactform{
+    background-color: #889cb5;
+    border-radius: 34px;
+padding-bottom: 23px;
+}
+
+#contactform *{
+    color:white;
+}
+#contactform {
+    background: rgba(0,0,0,0.8);
+  }
+  
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    #contactform {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+  }
+
+
+
+/* #signupbtn{
+    position: relative;
+    left: 271px;
+} */
